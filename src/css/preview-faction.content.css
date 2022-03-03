@@ -1,0 +1,25 @@
+.preview {
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+}
+
+.buttons {
+    justify-content: center;
+    position: absolute;
+    top: 75%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+}
+
+.text {
+    text-shadow: 2px 2px #000000d6
+}
