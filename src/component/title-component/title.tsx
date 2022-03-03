@@ -9,7 +9,7 @@ const Title = () => {
             <Image className={"gif-image"} src={previewGif} alt="background"/>
             <Image className={"logo-image"} src={logo} />
             <h2 className={"header-one"}>Conquer your daemons</h2>
-            <h2 className={"header-two"}>Or join to them</h2>
+            <h2 className={"header-two"}>...or become them</h2>
         </article>
     )
 }
