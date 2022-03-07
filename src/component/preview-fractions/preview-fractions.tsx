@@ -152,9 +152,9 @@ const PreviewFactions = () => {
     }
 
     return (
-        <Box style={{height: 1077, position: 'relative', overflow: "hidden"}}>
+        <Box style={{height: 1050, position: 'relative', overflow: "hidden"}}>
             <Image className={"gif-image"} src={previewFraction.background} alt="background"/>
-            <Flex className={"preview"}>
+            <Flex className={"faction-description"}>
                 <Box marginTop={200} marginRight={275}>
                     <ArrowBackIcon cursor={"pointer"} w={50} h={50} color={previewFraction.textColor}
                                    onClick={forwardToPreviousFraction} />

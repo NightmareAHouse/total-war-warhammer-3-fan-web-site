@@ -1,6 +1,6 @@
 {
-  "name": "project",
-  "version": "0.2.0",
+    "name": "total-war-warhammer-web-page",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
