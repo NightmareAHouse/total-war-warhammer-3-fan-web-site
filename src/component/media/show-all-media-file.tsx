@@ -1,6 +1,5 @@
 import {Box, Flex, Image, Text} from "@chakra-ui/react";
 import {mediaFilesType} from "../type.d";
-import media from "./media";
 
 type Props = {
     previousMediaFile: mediaFilesType,
@@ -16,16 +15,16 @@ const ShowAllMediaFile = (props: Props) => {
     const PreviousOrNextMediaFileShow = (props: {
         mediaFile: mediaFilesType,
         marginLeftParams: number,
-        style: string,
+        cssStyleName: string,
         changeMedia: () => void
     }) => {
-        const {mediaFile, marginLeftParams, style, changeMedia} = props;
+        const {mediaFile, marginLeftParams, cssStyleName, changeMedia} = props;
         if (mediaFile.type === "image") {
             return (
                 <>
                     <Image src={mediaFile.filePath} width={640} height={480} marginLeft={marginLeftParams}
                            opacity={0.4} onClick={changeMedia}/>
-                    <Text className={style} style={{opacity: 0.4}}>
+                    <Text className={cssStyleName} style={{opacity: 0.4}}>
                         {mediaFile.text}
                     </Text>
                 </>
@@ -37,7 +36,7 @@ const ShowAllMediaFile = (props: Props) => {
                            src={`https://img.youtube.com/vi_webp/${mediaFile.videoId}/maxresdefault.webp`}
                            width={640} height={480} marginLeft={marginLeftParams}
                            style={{opacity: 0.4}} onClick={changeMedia}/>
-                    <Text className={style} style={{opacity: 0.4}}>
+                    <Text className={cssStyleName} style={{opacity: 0.4}}>
                         {mediaFile.text}
                     </Text>
                 </>
@@ -77,14 +76,14 @@ const ShowAllMediaFile = (props: Props) => {
         <Flex>
             <Box className={'previous-media'}>
                 <PreviousOrNextMediaFileShow mediaFile={previousMediaFile} marginLeftParams={-100}
-                                             style={"description-previous-media-text"} changeMedia={previousMedia}/>
+                                             cssStyleName={"description-previous-media-text"} changeMedia={previousMedia}/>
             </Box>
             <Box className={'current-media'}>
                 <CurrentMediaFileShow mediaFile={currentMediaFile}/>
             </Box>
             <Box className={'next-media'}>
                 <PreviousOrNextMediaFileShow mediaFile={nextMediaFile} marginLeftParams={100}
-                                             style={"description-next-media-text"} changeMedia={nextMedia}/>
+                                             cssStyleName={"description-next-media-text"} changeMedia={nextMedia}/>
             </Box>
         </Flex>
     )
