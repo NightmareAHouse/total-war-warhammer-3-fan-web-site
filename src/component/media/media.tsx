@@ -1,71 +1,160 @@
-import {Box, Flex, Icon, Image, Text} from "@chakra-ui/react";
+import {Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs, Text} from "@chakra-ui/react";
 import "../../css/media.content.css"
 import test1 from "../../resources/kislev.jpg"
 import test2 from "../../resources/cathaj.jpg"
 import test3 from "../../resources/slaanesh.jpg"
 import {ArrowBackIcon, ArrowForwardIcon} from "@chakra-ui/icons";
 import {useState} from "react";
+import {mediaFilesType} from "../type.d";
+import ShowAllMediaFile from "./show-all-media-file";
+import ShowOnlyImageMediaFile from "./show-only-image-media-file";
+import ShowOnlyVideoMediaFile from "./show-only-video-media-file";
 
-type mediaFilesType = {
-    id: number,
-    filePath: string
-}
-
-
-const mediaFiles: mediaFilesType[] = [{
+const allMediaFiles: mediaFilesType[] = [{
     id: 0,
+    type: "image",
+    text: 'Kislev art',
     filePath: test1
 }, {
     id: 1,
+    type: "video",
+    text: 'Total War Warhammer 3 Announce trailer',
+    filePath: "https://www.youtube.com/embed/HAr7yUlM0Po",
+    videoId: 'HAr7yUlM0Po'
+}, {
+    id: 2,
+    type: "image",
+    text: 'Cathaj art',
+    filePath: test2
+}, {
+    id: 3,
+    type: "video",
+    text: 'Kislev vs Khorne game trailer',
+    filePath: "https://www.youtube.com/embed/8JWqlDxEQps",
+    videoId: '8JWqlDxEQps'
+}, {
+    id: 4,
+    type: "image",
+    text: 'Slaanesh Art',
+    filePath: test3
+}, {
+    id: 5,
+    type: 'video',
+    text: 'Cathay vs Tzeentch game trailer',
+    filePath: 'https://www.youtube.com/embed/033FWxL22A0',
+    videoId: '033FWxL22A0'
+}];
+
+const onlyImageMediaFiles: mediaFilesType[] = [{
+    id: 0,
+    type: "image",
+    text: 'Kislev art',
+    filePath: test1
+}, {
+    id: 1,
+    type: "image",
+    text: 'Cathaj art',
     filePath: test2
 }, {
     id: 2,
+    type: "image",
+    text: 'Slaanesh Art',
     filePath: test3
 }]
 
+const onlyVideoMediaFiles: mediaFilesType[] = [{
+    id: 0,
+    type: "video",
+    text: 'Total War Warhammer 3 Announce trailer',
+    filePath: "https://www.youtube.com/embed/HAr7yUlM0Po",
+    videoId: 'HAr7yUlM0Po'
+}, {
+    id: 1,
+    type: "video",
+    text: 'Kislev vs Khorne game trailer',
+    filePath: "https://www.youtube.com/embed/8JWqlDxEQps",
+    videoId: '8JWqlDxEQps'
+}, {
+    id: 2,
+    type: 'video',
+    text: 'Cathay vs Tzeentch game trailer',
+    filePath: 'https://www.youtube.com/embed/033FWxL22A0',
+    videoId: '033FWxL22A0'
+}]
+
 const Media = () => {
-    const [previousMediaFile, setPreviousMediaFile] = useState<mediaFilesType>(mediaFiles[2]);
-    const [currentMediaFile, setCurrentMediaFile] = useState<mediaFilesType>(mediaFiles[0]);
-    const [nextMediaFile, setNextMediaFile] = useState<mediaFilesType>(mediaFiles[1]);
+    const [data, setData] = useState<mediaFilesType[]>(allMediaFiles)
+    const [count, setCount] = useState<number>(1);
+    const [previousMediaFile, setPreviousMediaFile] = useState<mediaFilesType>(data[data.length - 1])
+    const [currentMediaFile, setCurrentMediaFile] = useState<mediaFilesType>(data[0]);
+    const [nextMediaFile, setNextMediaFile] = useState<mediaFilesType>(data[1]);
 
     const forwardToNextMedia = () => {
-        if ((previousMediaFile.id + 1) !== mediaFiles.length) {
-            setPreviousMediaFile(mediaFiles[previousMediaFile.id + 1])
+        if ((previousMediaFile.id + 1) !== data.length) {
+            setPreviousMediaFile(data[previousMediaFile.id + 1])
         } else {
-            setPreviousMediaFile(mediaFiles[0])
+            setPreviousMediaFile(data[0])
         }
 
-        if ((currentMediaFile.id + 1) !== mediaFiles.length) {
-            setCurrentMediaFile(mediaFiles[currentMediaFile.id + 1]);
+        if ((currentMediaFile.id + 1) !== data.length) {
+            setCount(count + 1)
+            setCurrentMediaFile(data[currentMediaFile.id + 1]);
         } else {
-            setCurrentMediaFile(mediaFiles[0])
+            setCount(1)
+            setCurrentMediaFile(data[0])
         }
 
-        if ((nextMediaFile.id + 1) !== mediaFiles.length) {
-            setNextMediaFile(mediaFiles[nextMediaFile.id + 1])
+        if ((nextMediaFile.id + 1) !== data.length) {
+            setNextMediaFile(data[nextMediaFile.id + 1])
         } else {
-            setNextMediaFile(mediaFiles[0])
+            setNextMediaFile(data[0])
         }
     }
 
     const forwardToPreviousMedia = () => {
         if ((previousMediaFile.id) !== 0) {
-            setPreviousMediaFile(mediaFiles[previousMediaFile.id - 1])
+            setPreviousMediaFile(data[previousMediaFile.id - 1])
         } else {
-            setPreviousMediaFile(mediaFiles[2])
+            setPreviousMediaFile(data[data.length - 1])
         }
 
         if ((currentMediaFile.id) !== 0) {
-            setCurrentMediaFile(mediaFiles[currentMediaFile.id - 1]);
+            setCount(count - 1)
+            setCurrentMediaFile(data[currentMediaFile.id - 1]);
         } else {
-            setCurrentMediaFile(mediaFiles[2])
+            setCount(data.length)
+            setCurrentMediaFile(data[data.length - 1])
         }
 
         if ((nextMediaFile.id) !== 0) {
-            setNextMediaFile(mediaFiles[nextMediaFile.id - 1])
+            setNextMediaFile(data[nextMediaFile.id - 1])
         } else {
-            setNextMediaFile(mediaFiles[2])
+            setNextMediaFile(data[data.length - 1])
         }
+    }
+
+    const showAllMedia = () => {
+        setCount(1)
+        setData(allMediaFiles);
+        setPreviousMediaFile(allMediaFiles[allMediaFiles.length - 1]);
+        setCurrentMediaFile(allMediaFiles[0]);
+        setNextMediaFile(allMediaFiles[1]);
+    }
+
+    const showOnlyImageMedia = () => {
+        setCount(1)
+        setData(onlyImageMediaFiles);
+        setPreviousMediaFile(onlyImageMediaFiles[onlyImageMediaFiles.length - 1]);
+        setCurrentMediaFile(onlyImageMediaFiles[0]);
+        setNextMediaFile(onlyImageMediaFiles[1]);
+    }
+
+    const showOnlyVideoMedia = () => {
+        setCount(1)
+        setData(onlyVideoMediaFiles);
+        setPreviousMediaFile(onlyVideoMediaFiles[onlyVideoMediaFiles.length - 1]);
+        setCurrentMediaFile(onlyVideoMediaFiles[0]);
+        setNextMediaFile(onlyVideoMediaFiles[1]);
     }
 
     return (
@@ -76,41 +165,56 @@ const Media = () => {
                         Media
                     </Text>
                     <Flex>
-                        <Box marginLeft={100} marginRight={20}>
-                            All
-                        </Box>
-                        <Box>
-                            Image
-                        </Box>
-                        <Box marginLeft={20}>
-                            Video
+                        <Tabs>
+                            <TabList marginLeft={100} marginTop={25}>
+                                <Tab onClick={showAllMedia}>All</Tab>
+                                <Tab onClick={showOnlyImageMedia}>Image</Tab>
+                                <Tab onClick={showOnlyVideoMedia}>Video</Tab>
+                            </TabList>
+
+                            <Flex className={"media-slider"}>
+                                <TabPanels>
+                                    <TabPanel>
+                                        <ShowAllMediaFile previousMediaFile={previousMediaFile}
+                                                          currentMediaFile={currentMediaFile}
+                                                          nextMediaFile={nextMediaFile}
+                                                          previousMedia={forwardToPreviousMedia}
+                                                          nextMedia={forwardToNextMedia} />
+                                    </TabPanel>
+                                    <TabPanel>
+                                        <ShowOnlyImageMediaFile  previousMediaFile={previousMediaFile}
+                                                                 currentMediaFile={currentMediaFile}
+                                                                 nextMediaFile={nextMediaFile}
+                                                                 previousMedia={forwardToPreviousMedia}
+                                                                 nextMedia={forwardToNextMedia} />
+                                    </TabPanel>
+                                    <TabPanel>
+                                        <ShowOnlyVideoMediaFile  previousMediaFile={previousMediaFile}
+                                                                 currentMediaFile={currentMediaFile}
+                                                                 nextMediaFile={nextMediaFile}
+                                                                 previousMedia={forwardToPreviousMedia}
+                                                                 nextMedia={forwardToNextMedia} />
+                                    </TabPanel>
+                                </TabPanels>
+                            </Flex>
+                        </Tabs>
+
+                        <Box marginLeft={1200} marginTop={5}>
+                            {count} / {data.length}
                         </Box>
 
-                        <Box marginLeft={1250}>
-                            <ArrowBackIcon viewBox={"0 0 20 20"} marginLeft={25} marginRight={25}
-                                           onClick={forwardToPreviousMedia}/>
-                            <ArrowForwardIcon viewBox={"0 0 20 20"} marginLeft={25} marginRight={25}
-                                              onClick={forwardToNextMedia}/>
+                        <Box marginLeft={5}>
+                            <ArrowBackIcon viewBox={"0 0 20 20"} marginLeft={25} marginRight={25} marginTop={25}
+                                           onClick={forwardToPreviousMedia} cursor={"pointer"}/>
+                            <ArrowForwardIcon viewBox={"0 0 20 20"} marginLeft={25} marginRight={25} marginTop={25}
+                                              onClick={forwardToNextMedia} cursor={"pointer"}/>
                         </Box>
+
                     </Flex>
                 </Box>
             </Flex>
-            <Flex className={"media-slider"}>
-                <Box marginRight={30} marginTop={225}>
-                    <Image src={previousMediaFile.filePath} width={400} height={200}
-                           opacity={0.4}/>
-                </Box>
-                <Box>
-                    <Image src={currentMediaFile.filePath} width={900} height={600}
-                           opacity={1}/>
-                </Box>
-                <Box marginLeft={30} marginTop={225}>
-                    <Image src={nextMediaFile.filePath} width={400} height={200}
-                           opacity={0.4}/>
-                </Box>
-            </Flex>
         </Box>
-    )
+)
 }
 
 export default Media
