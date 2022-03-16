@@ -1,0 +1,74 @@
+.description {
+    justify-content: left;
+    position: absolute;
+    top: 0;
+    bottom: 85%;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+}
+
+.media-slider {
+    justify-content: center;
+    position: absolute;
+    top: 1000px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+}
+
+.previous-media {
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 500px;
+    left: 0;
+    right: 0px;
+    margin: auto;
+}
+
+.current-media {
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 500px;
+    left: 625px;
+    right: 0;
+    margin: auto;
+}
+
+.next-media {
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 500px;
+    left: 1260px;
+    right: 0;
+    margin: auto;
+}
+
+.description-previous-media-text {
+    width: 640px;
+    font-size: 35px;
+    font-family: "Warhammer", serif !important;
+    color: white;
+    margin-left: -100px;
+}
+
+.description-current-media-text {
+    width: 640px;
+    font-size: 35px;
+    font-family: "Warhammer", serif !important;
+    color: white;
+}
+
+.description-next-media-text {
+    width: 640px;
+    font-size: 35px;
+    font-family: "Warhammer", serif !important;
+    color: white;
+    margin-left: 100px;
+}
