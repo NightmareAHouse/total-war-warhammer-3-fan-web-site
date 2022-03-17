@@ -1,4 +1,4 @@
-import {Box, Flex, HStack, Icon, Image, Text} from "@chakra-ui/react"
+import {Box, Button, Flex, HStack, Icon, Image, Text, Link} from "@chakra-ui/react"
 import "../../css/preview-faction.content.css"
 import kislev from "../../resources/kislev.jpg"
 import cathaj from "../../resources/cathaj.jpg"
@@ -9,14 +9,15 @@ import tzeentch from "../../resources/tzeentch.jpg"
 import nurgle from "../../resources/nurgle.jpg"
 import slaanesh from "../../resources/slaanesh.jpg"
 import {useState} from "react";
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons"
+import {ArrowBackIcon, ArrowForwardIcon} from "@chakra-ui/icons"
 
 type previewFractionsType = {
     index: number,
     background: string,
     videoUrl: string,
     text: string,
-    textColor: string
+    textColor: string,
+    url: string,
 }
 
 const previewFractionsDefault: previewFractionsType[] = [{
@@ -28,7 +29,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         that is known far and wide for having some of the greatest horsemen to ever roam the plains of the southern realms. 
         Ruled by a mighty Tzar, Kislev is a nation born from the saddle, their peoples ancestry being traced to the mighty 
         horse-warriors of the Eastern Steppes many millennia ago.`,
-    textColor: "#71bbcfd6"
+    textColor: "#71bbcfd6",
+    url: '/preview/kislev'
 }, {
     index: 1,
     background: cathaj,
@@ -38,7 +40,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         the Hung and Kurgan territories within the Chaos Wastes. To the east are the island realm of Nippon
         and the Far Sea, and beyond that the Boiling Sea and Naggaroth. To the south are the Kingdoms of Ind
         and the Hinterlands of Khuresh.`,
-    textColor: "#e3653ae6"
+    textColor: "#e3653ae6",
+    url: '/preview/cathaj'
 }, {
     index: 2,
     background: ogreKingdoms,
@@ -48,7 +51,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         plundering far off and exotic lands the likes of which no man will ever see in their lifetime.
         Yet no matter how far away they may be, all Ogres refer to the scattered tribal kingdoms that dominate the
         slopes and river valleys of the Mountains of Mourn their rightful, hard-earned homeland.`,
-    textColor: "#e54545"
+    textColor: "#e54545",
+    url: '/preview/ogre'
 }, {
     index: 3,
     background: daemonsOfChaos,
@@ -58,7 +62,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         and darkest emotions of all mortal creatures. From their fortresses and palaces within this Realm of Chaos, these 
         entities watch with envious eyes towards the mortal kingdoms, waiting with unblinking patience for their chance to 
         wreak destruction and dismay upon the world and to feed upon the misery that they have wrought.`,
-    textColor: "#4fa2e5d4"
+    textColor: "#a45428",
+    url: '/preview/chaos-undivaded'
 }, {
     index: 4,
     background: khorne,
@@ -68,7 +73,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         in this time of constant conflict often renders him the mightiest of the Chaos Gods in his effect on the world. 
         His domain encompasses the most basic and brutal of sentient emotions - hate, anger, rage, the desire for 
         destruction and the joy of killing one's enemies.`,
-    textColor: "#f5771ed9"
+    textColor: "#f5771ed9",
+    url: '/preview/khorne'
 }, {
     index: 5,
     background: tzeentch,
@@ -79,7 +85,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         other Ruinous Powers in his number of facets and aspects. For he is change, said to embody every mortal
         creature's recognition of, and desire to, change. His face and form shifts and turns from eternity
         unto eternity.`,
-    textColor: "#3dbccfe0"
+    textColor: "#3dbccfe0",
+    url: '/preview/tzeentch'
 }, {
     index: 6,
     background: nurgle,
@@ -89,7 +96,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         Men, who suffer so acutely from a fear of death. He is the eldest of the four Chaos Gods and indeed is undoubtedly 
         the oldest Chaos God of all, for the process of death and decay is as ancient as life itself. Nurgle is the 
         embodiment of the constant cycle of death and rebirth which animates all life in the universe.`,
-    textColor: "#5bef2ad9"
+    textColor: "#5bef2ad9",
+    url: '/preview/nurgle'
 }, {
     index: 7,
     background: slaanesh,
@@ -99,7 +107,8 @@ const previewFractionsDefault: previewFractionsType[] = [{
         and amoral pleasure for its own sake. He is the God of Obsession, the Master of Excess in All Things, from gluttony 
         to lust to megalomania. Out of all the pantheon, Slaanesh is the youngest of the Chaos Gods, for the complex 
         emotions of erotic desire and decadence can only exist within the minds of intelligent races.`,
-    textColor: "#e32579cf"
+    textColor: "#e32579cf",
+    url: '/preview/slaanesh'
 }]
 const buttonsColorDefault = ['#41474c', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff', '#ffffff'];
 
@@ -123,7 +132,7 @@ const PreviewFactions = () => {
     }
 
     const forwardToNextFraction = () => {
-        if(previewFraction.index !== 7) {
+        if (previewFraction.index !== 7) {
             onClick(previewFraction.index + 1)
         } else {
             onClick(0)
@@ -131,7 +140,7 @@ const PreviewFactions = () => {
     }
 
     const forwardToPreviousFraction = () => {
-        if(previewFraction.index !== 0) {
+        if (previewFraction.index !== 0) {
             onClick(previewFraction.index - 1)
         } else {
             onClick(7)
@@ -155,9 +164,9 @@ const PreviewFactions = () => {
         <Box style={{height: 1050, position: 'relative', overflow: "hidden"}}>
             <Image className={"gif-image"} src={previewFraction.background} alt="background"/>
             <Flex className={"faction-description"}>
-                <Box marginTop={200} marginRight={275}>
+                <Box marginTop={200} marginRight={225} marginLeft={50}>
                     <ArrowBackIcon cursor={"pointer"} w={50} h={50} color={previewFraction.textColor}
-                                   onClick={forwardToPreviousFraction} />
+                                   onClick={forwardToPreviousFraction}/>
                 </Box>
                 <Box marginRight={10}>
                     <article>
@@ -166,26 +175,36 @@ const PreviewFactions = () => {
                     </article>
                 </Box>
                 <Box marginLeft={10} marginRight={10}>
-                    <Text width={850} className={"text"} textAlign={"left"} fontWeight={"bold"}
+                    <Text width={850} className={"preview-fraction-text"} textAlign={"left"} fontWeight={"bold"}
                           color={previewFraction.textColor} margin={0}>
                         {previewFraction.text}
                     </Text>
                 </Box>
-                <Box marginTop={200}>
+                <Box marginTop={200} marginRight={50}>
                     <ArrowForwardIcon cursor={"pointer"} w={50} h={50} color={previewFraction.textColor}
                                       onClick={forwardToNextFraction}/>
                 </Box>
             </Flex>
-            <Box marginTop={125}>
-                <HStack className={"buttons"}>
-                    <CircleIcon value={0} boxSize={20} color={buttonsColor[0]}/>
-                    <CircleIcon value={1} boxSize={20} color={buttonsColor[1]}/>
-                    <CircleIcon value={2} boxSize={20} color={buttonsColor[2]}/>
-                    <CircleIcon value={3} boxSize={20} color={buttonsColor[3]}/>
-                    <CircleIcon value={4} boxSize={20} color={buttonsColor[4]}/>
-                    <CircleIcon value={5} boxSize={20} color={buttonsColor[5]}/>
-                    <CircleIcon value={6} boxSize={20} color={buttonsColor[6]}/>
-                    <CircleIcon value={7} boxSize={20} color={buttonsColor[7]}/>
+            <Box>
+                <div className={'legendary-lord-buttons'}>
+                    <Link href={`${previewFraction.url}`}>
+                        <Button width={250} colorScheme={"blackAlpha"} backgroundColor={`${previewFraction.textColor}`}>
+                            <Text className={"button-text"}>
+                                Learn more about playing fraction
+                            </Text>
+                        </Button>
+                    </Link>
+                </div>
+
+                <HStack className={"preview-factions-buttons"}>
+                    <CircleIcon value={0} boxSize={8} color={buttonsColor[0]}/>
+                    <CircleIcon value={1} boxSize={8} color={buttonsColor[1]}/>
+                    <CircleIcon value={2} boxSize={8} color={buttonsColor[2]}/>
+                    <CircleIcon value={3} boxSize={8} color={buttonsColor[3]}/>
+                    <CircleIcon value={4} boxSize={8} color={buttonsColor[4]}/>
+                    <CircleIcon value={5} boxSize={8} color={buttonsColor[5]}/>
+                    <CircleIcon value={6} boxSize={8} color={buttonsColor[6]}/>
+                    <CircleIcon value={7} boxSize={8} color={buttonsColor[7]}/>
                 </HStack>
             </Box>
         </Box>

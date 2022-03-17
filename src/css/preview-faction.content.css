@@ -9,7 +9,18 @@
     margin: auto;
 }
 
-.buttons {
+.legendary-lord-buttons {
+    justify-content: center;
+    position: absolute;
+    top: 60%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+}
+
+.preview-factions-buttons {
     justify-content: center;
     position: absolute;
     top: 75%;
@@ -20,6 +31,10 @@
     margin: auto;
 }
 
-.text {
+.preview-fraction-text {
     text-shadow: 2px 2px #000000d6
+}
+
+.button-text {
+    font-family: "Warhammer", serif !important;
 }
