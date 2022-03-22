@@ -1,8 +1,8 @@
 import { Switch, Route } from "react-router-dom"
 import MainPage from "../page/main-page"
-import PreviewKislevPlayableFactions from "../component/preview-fractions/preview-playable-factions/preview-kislev-playable-factions";
+import PreviewKislevPlayableFactions from "../component/preview-fractions/preview-playable-factions/kislev/preview-kislev-playable-factions";
 import PreviewCathajPlayableFactions
-    from "../component/preview-fractions/preview-playable-factions/preview-cathaj-playable-factions";
+    from "../component/preview-fractions/preview-playable-factions/cathaj/preview-cathaj-playable-factions";
 import PreviewOgrePlayableFactions
     from "../component/preview-fractions/preview-playable-factions/preview-ogre-playable-factions";
 import PreviewChaosUndividedPlayableFaction
