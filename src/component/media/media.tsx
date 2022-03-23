@@ -29,7 +29,7 @@ const allMediaFiles: mediaFilesType[] = [{
 }, {
     id: 3,
     type: "video",
-    text: 'Kislev vs Khorne game trailer',
+    text: 'Kislev vs khorne game trailer',
     filePath: "https://www.youtube.com/embed/8JWqlDxEQps",
     videoId: '8JWqlDxEQps'
 }, {
@@ -71,7 +71,7 @@ const onlyVideoMediaFiles: mediaFilesType[] = [{
 }, {
     id: 1,
     type: "video",
-    text: 'Kislev vs Khorne game trailer',
+    text: 'Kislev vs khorne game trailer',
     filePath: "https://www.youtube.com/embed/8JWqlDxEQps",
     videoId: '8JWqlDxEQps'
 }, {

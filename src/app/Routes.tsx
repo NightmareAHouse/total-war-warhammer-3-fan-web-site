@@ -4,11 +4,11 @@ import PreviewKislevPlayableFactions from "../component/preview-fractions/previe
 import PreviewCathajPlayableFactions
     from "../component/preview-fractions/preview-playable-factions/cathaj/preview-cathaj-playable-factions";
 import PreviewOgrePlayableFactions
-    from "../component/preview-fractions/preview-playable-factions/preview-ogre-playable-factions";
+    from "../component/preview-fractions/preview-playable-factions/ogre/preview-ogre-playable-factions";
 import PreviewChaosUndividedPlayableFaction
     from "../component/preview-fractions/preview-playable-factions/preview-chaos-undivided-playable-faction";
 import PreviewKhornePlayableFaction
-    from "../component/preview-fractions/preview-playable-factions/preview-khorne-playable-faction";
+    from "../component/preview-fractions/preview-playable-factions/khorne/preview-khorne-playable-faction";
 import PreviewTzeentchPlayableFaction
     from "../component/preview-fractions/preview-playable-factions/preview-tzeentch-playable-faction";
 import PreviewNurglePlayableFaction

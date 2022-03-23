@@ -1,16 +1,15 @@
-import {Box, Flex, TabList, TabPanel, TabPanels, Tabs, Text, useStyles, useTab, Image, Link, Button} from "@chakra-ui/react";
-import "../../../../css/preview-playable-faction.content.css"
-import MiaoYingIcon from "../../../../resources/lord-icon/miao-ying-icon.png"
-import MiaoYingChoosingIcon from "../../../../resources/lord-icon/miao-ying-chosing-icon.png";
-import ZhaoMingIcon from "../../../../resources/lord-icon/zhao-ming-icon.png"
-import ZhaoMingChoosingIcon from "../../../../resources/lord-icon/zhao-ming-choosing-icon.png"
-import PreviewMiaoYing from "./preview-miao-ying";
-import PreviewZhaoMing from "./preview-zhao-ming";
+import {Box, Button, Flex, Image, Link, TabList, TabPanel, TabPanels, Tabs, Text, useStyles, useTab} from "@chakra-ui/react";
+import GreasusGoldtoothIcon from "../../../../resources/lord-icon/greasus-goldtooth-icon.png";
+import GreasusGoldtoothChoosingIcon from "../../../../resources/lord-icon/greasus-goldtooth-choosing-icon.png";
+import ScragTheSlaughterIcon from "../../../../resources/lord-icon/scrag-the-slaughter-icon.png";
+import ScragTheSlaughterChoosingIcon from "../../../../resources/lord-icon/scrag-the-slaughter-choosing-icon.png";
+import PreviewGreasusGoldtooth from "./preview-greasus-goldtooth";
+import PreviewScragTheSlaughterer from "./preview-scrag-the-slaughterer";
 
-const MiaoYing = [MiaoYingIcon, MiaoYingChoosingIcon];
-const ZhaoMing = [ZhaoMingIcon, ZhaoMingChoosingIcon];
+const Greasus = [GreasusGoldtoothIcon, GreasusGoldtoothChoosingIcon];
+const Scrag = [ScragTheSlaughterIcon, ScragTheSlaughterChoosingIcon];
 
-const PreviewCathajPlayableFactions = () => {
+const PreviewOgrePlayableFactions = () => {
     const CustomIcon = (props: any) => {
         const styles = useStyles();
         const tabProps = useTab(props);
@@ -45,7 +44,7 @@ const PreviewCathajPlayableFactions = () => {
                 </Link>
 
                 <Text className={"text"} marginLeft={598}>
-                    Cathaj: Playable Factions
+                    Ogre: Playable Factions
                 </Text>
             </Flex>
 
@@ -53,20 +52,20 @@ const PreviewCathajPlayableFactions = () => {
                 <Tabs variant='unstyled'>
                     <TabList marginLeft={100} marginTop={25}>
                         <CustomIcon>
-                            {MiaoYing}
+                            {Greasus}
                         </CustomIcon>
                         <CustomIcon>
-                            {ZhaoMing}
+                            {Scrag}
                         </CustomIcon>
                     </TabList>
 
                     <TabPanels>
                         <TabPanel>
-                            <PreviewMiaoYing/>
+                            <PreviewGreasusGoldtooth/>
                         </TabPanel>
 
                         <TabPanel>
-                            <PreviewZhaoMing/>
+                            <PreviewScragTheSlaughterer/>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
@@ -75,4 +74,4 @@ const PreviewCathajPlayableFactions = () => {
     )
 }
 
-export default PreviewCathajPlayableFactions
+export default PreviewOgrePlayableFactions

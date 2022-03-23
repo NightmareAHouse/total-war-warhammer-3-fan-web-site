@@ -1,5 +1,5 @@
 import {Box, Flex, Image, Stack, Text} from "@chakra-ui/react";
-import theIceCourt from "../../../../resources/the-ice-court.png";
+import theIceCourt from "../../../../resources/fraction-icon/the-ice-court.png";
 import devotionIcon from "../../../../resources/icon/devotion-icon.png";
 import heroIcon from "../../../../resources/icon/hero-icon.png";
 import controlIcon from "../../../../resources/icon/control-icon.png";
@@ -12,7 +12,7 @@ import miscastIcon from "../../../../resources/icon/miscast-icon.png";
 
 const PreviewTzarinaKatarina = () => {
     return (
-        <div style={{width: '1920px'}}>
+        <div style={{width: '1888px'}}>
             <div style={{margin: 20}}/>
             <Flex>
                 <Box width={'50%'}>
@@ -89,11 +89,9 @@ const PreviewTzarinaKatarina = () => {
                         </Text>
                     </Box>
 
-                    <div style={{margin: 10}}/>
-
                     <Stack direction={'row'} marginLeft={134} width={500}>
                         <Image src={corruptionIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "74.5%", left: "9.75%"}}>
+                        <div style={{position: "absolute", margin: "auto", top: "73%", left: "9.75%"}}>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Corruption -6
@@ -104,11 +102,11 @@ const PreviewTzarinaKatarina = () => {
                         </div>
                     </Stack>
 
-                    <div style={{margin: 20}}/>
+                    <div style={{margin: 10}}/>
 
                     <Stack direction={'row'} marginLeft={134} width={500}>
                         <Image src={upkeepIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "79.5%", left: "9.75%"}}>
+                        <div style={{position: "absolute", margin: "auto", top: "77%", left: "9.75%"}}>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Upkeep: -50% for Ice Guard units
@@ -126,7 +124,7 @@ const PreviewTzarinaKatarina = () => {
                         </div>
                     </Stack>
 
-                    <div style={{margin: 20}}/>
+                    <div style={{margin: 10}}/>
 
                     <Stack direction={'row'} marginLeft={135} width={500}>
                         <Image src={miscastIcon} width={25} height={25}/>
