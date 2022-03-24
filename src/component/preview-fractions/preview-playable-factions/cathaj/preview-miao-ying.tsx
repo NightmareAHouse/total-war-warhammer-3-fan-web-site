@@ -9,10 +9,9 @@ import yinIcon from "../../../../resources/icon/yin-icon.png";
 
 const PreviewMiaoYing = () => {
     return (
-        <div style={{width: '1880px'}}>
-            <div style={{margin: 20}}/>
+        <div style={{margin: 20}}>
             <Flex>
-                <Box width={'50%'} backgroundColor={'#6b798538'} height={600}>
+                <Box width={'50%'} backgroundColor={'#6b798538'} height={650}>
                     <Flex marginLeft={125}>
                         <Box>
                             <Image src={theNorthemProvinces} width={125} height={125}/>
@@ -22,13 +21,13 @@ const PreviewMiaoYing = () => {
                             <Text className={"text"} w={500} h={50} textAlign={"start"} fontSize={35}>
                                 Miao Ying, the Storm Dragon
                             </Text>
-                            <Text className={"text"} w={300} h={50} textAlign={"start"} marginLeft={1} fontSize={25}>
+                            <Text className={"text"} w={300} h={50} textAlign={"start"} fontSize={25}>
                                 The Northern Provinces
                             </Text>
                         </Box>
                     </Flex>
 
-                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125} width={820}>
+                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125}>
                         Miao Ying, the Storm Dragon, reigns across Northern Cathay and commands the armies of the
                         Great Bastion. Cold and aloof, she has ruled over the Northern Provinces for centuries and
                         maintains their defences with strength of arms and wondrous war machines. For the Great Bastion is
@@ -52,10 +51,9 @@ const PreviewMiaoYing = () => {
 
                     <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={135} width={500}>
+                    <Stack direction={'row'} marginLeft={135}>
                         <Image src={leadershipIcon} width={25} height={25}/>
-                        <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
-                              style={{marginInlineStart: '0.2rem'}}>
+                        <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}>
                             Leadership: +10% when fighting against Daemons of Chaos
                         </Text>
                     </Stack>
@@ -75,9 +73,9 @@ const PreviewMiaoYing = () => {
                         </Text>
                     </Box>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                         <Image src={upkeepIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "74%", left: "9.75%"}}>
+                        <div>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Upkeep: -50% for missile infantry units

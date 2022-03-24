@@ -1,4 +1,4 @@
-import {Box, Button, Flex, Image, Link, Stack, Text} from "@chakra-ui/react";
+import {Box, Button, Flex, Image, Link, Spacer, Stack, Text} from "@chakra-ui/react";
 import kugatIcon from "../../../../resources/lord-icon/kugat-icon.png";
 import poxmakersOfNurgle from "../../../../resources/fraction-icon/poxmakers-of-nurgle.png";
 import growthIcon from "../../../../resources/icon/growth-icon.png";
@@ -13,25 +13,38 @@ const PreviewNurglePlayableFaction = () => {
     return (
         <>
             <Flex>
-                <Link href={`/`}>
-                    <Button width={150} colorScheme={"blackAlpha"}>
-                        <Text className={"button-text"}>
-                            Back to main page
-                        </Text>
-                    </Button>
-                </Link>
+                <Box marginLeft={5}>
+                    <Link href={`/`}>
+                        <Button width={175} colorScheme={"blackAlpha"}>
+                            <Text className={"button-text"}>
+                                Back to main page
+                            </Text>
+                        </Button>
+                    </Link>
+                </Box>
 
-                <Text className={"text"} marginLeft={598}>
+                <Spacer/>
+
+                <Text className={"text"}>
                     Nurgle: Playable Factions
                 </Text>
+
+                <Spacer/>
+
+                <Box marginRight={5}>
+                    <Button width={175} colorScheme={"blackAlpha"}>
+                        <Text className={"button-text"}>
+                            Character Comparison
+                        </Text>
+                    </Button>
+                </Box>
             </Flex>
 
             <Image marginLeft={145} marginTop={25} width={86} height={115} src={kugatIcon}/>
 
-            <div style={{width: '1880px'}}>
-                <div style={{margin: 20}}/>
+            <div style={{margin: 20}}>
                 <Flex>
-                    <Box width={'50%'} backgroundColor={'#6b798538'} height={600}>
+                    <Box width={'50%'} backgroundColor={'#6b798538'} height={650}>
                         <Flex marginLeft={125}>
                             <Box>
                                 <Image src={poxmakersOfNurgle} width={125} height={125}/>
@@ -48,7 +61,7 @@ const PreviewNurglePlayableFaction = () => {
                             </Box>
                         </Flex>
 
-                        <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125} width={820}>
+                        <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125}>
                             Ku'gath Plaguefather, the Rotting Poxmaker, is one of the most favoured of Nurgle's chosen.
                             Fascinated by the breeding of new contagions, he frequently forays into the mortal realms to
                             test
@@ -95,11 +108,9 @@ const PreviewNurglePlayableFaction = () => {
                             </Text>
                         </Box>
 
-                        <div style={{margin: 5}}/>
-
-                        <Stack direction={'row'} marginLeft={134} width={500}>
+                        <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                             <Image src={infectionIcon} width={25} height={25}/>
-                            <div style={{position: "absolute", margin: "auto", top: "65.5%", left: "8.8%"}}>
+                            <div>
                                 <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                       marginBottom={-1}>
                                     Ambush defence chance: +50%
@@ -117,11 +128,11 @@ const PreviewNurglePlayableFaction = () => {
                             </div>
                         </Stack>
 
-                        <div style={{margin: 25}}/>
+                        <div style={{margin: 10}}/>
 
-                        <Stack direction={'row'} marginLeft={134} width={500}>
+                        <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                             <Image src={nurgleCoruptionIcon} width={25} height={25}/>
-                            <div style={{position: "absolute", margin: "auto", top: "70.5%", left: "8.8%"}}>
+                            <div>
                                 <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                       marginBottom={-1}>
                                     Nurgle corruption: +2
@@ -134,11 +145,11 @@ const PreviewNurglePlayableFaction = () => {
                             </div>
                         </Stack>
 
-                        <div style={{margin: 20}}/>
+                        <div style={{margin: 10}}/>
 
-                        <Stack direction={'row'} marginLeft={134} width={500}>
+                        <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                             <Image src={plagueIcon} width={25} height={25}/>
-                            <div style={{position: "absolute", margin: "auto", top: "75%", left: "8.8%"}}>
+                            <div>
                                 <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                       marginBottom={-1}>
                                     Chance of a plague spreading: +15%

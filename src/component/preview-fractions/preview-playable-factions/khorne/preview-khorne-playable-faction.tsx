@@ -3,7 +3,7 @@ import {
     Button,
     Flex,
     Image,
-    Link, Stack,
+    Link, Spacer, Stack,
     Text,
 } from "@chakra-ui/react";
 import scarbrandIcon from "../../../../resources/lord-icon/scarbrand-icon.png";
@@ -17,25 +17,38 @@ const PreviewKhornePlayableFaction = () => {
     return (
         <>
             <Flex>
-                <Link href={`/`}>
-                    <Button width={150} colorScheme={"blackAlpha"}>
-                        <Text className={"button-text"}>
-                            Back to main page
-                        </Text>
-                    </Button>
-                </Link>
+                <Box marginLeft={5}>
+                    <Link href={`/`}>
+                        <Button width={175} colorScheme={"blackAlpha"}>
+                            <Text className={"button-text"}>
+                                Back to main page
+                            </Text>
+                        </Button>
+                    </Link>
+                </Box>
 
-                <Text className={"text"} marginLeft={598}>
+                <Spacer/>
+
+                <Text className={"text"}>
                     Khorne: Playable Factions
                 </Text>
+
+                <Spacer/>
+
+                <Box marginRight={5}>
+                    <Button width={175} colorScheme={"blackAlpha"}>
+                        <Text className={"button-text"}>
+                            Character Comparison
+                        </Text>
+                    </Button>
+                </Box>
             </Flex>
 
             <Image marginLeft={145} marginTop={25} width={86} height={115} src={scarbrandIcon}/>
 
-            <div style={{width: '1880px'}}>
-                <div style={{margin: 20}}/>
+            <div style={{margin: 20}}>
                 <Flex>
-                    <Box width={'50%'} backgroundColor={'#6b798538'} height={600}>
+                    <Box width={'50%'} backgroundColor={'#6b798538'} height={650}>
                         <Flex marginLeft={125}>
                             <Box>
                                 <Image src={exielsOfKhorne} width={125} height={125}/>
@@ -52,10 +65,13 @@ const PreviewKhornePlayableFaction = () => {
                             </Box>
                         </Flex>
 
-                        <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125} width={820}>
-                            Skarbrand, also known as the Exiled One, was once the greatest of all Khorne's Daemons. Undone
-                            by his pride, he was banished from the service of the Blood God and cast from Khorne's domain.
-                            Forever tormented by his downfall, Skarbrand wanders the mortal and immortal realms - a restless
+                        <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125}>
+                            Skarbrand, also known as the Exiled One, was once the greatest of all Khorne's Daemons.
+                            Undone
+                            by his pride, he was banished from the service of the Blood God and cast from Khorne's
+                            domain.
+                            Forever tormented by his downfall, Skarbrand wanders the mortal and immortal realms - a
+                            restless
                             fury that cannot be stopped!
                         </Text>
 
@@ -75,18 +91,18 @@ const PreviewKhornePlayableFaction = () => {
 
                         <div style={{margin: 10}}/>
 
-                        <Stack direction={'row'} marginLeft={135} width={500}>
+                        <Stack direction={'row'} marginLeft={135}>
                             <Image src={diplomaticIcon} width={25} height={25}/>
-                            <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}>
+                            <Text className={"text"} textAlign={'start'} textColor={'#d14141'} fontSize={16}>
                                 Diplomatic relations: -20 with Khornate factions
                             </Text>
                         </Stack>
 
                         <div style={{margin: 10}}/>
 
-                        <Stack direction={'row'} marginLeft={134} width={490}>
+                        <Stack direction={'row'} marginLeft={134} alignItems={'center'}>
                             <Image src={movementIcon} width={25} height={25}/>
-                            <div style={{position: "absolute", margin: "auto", top: "57.5%", left: "8.79%"}}>
+                            <div>
                                 <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                       marginBottom={-1}>
                                     Campaign movement range: +25% after razing a settlement
@@ -103,18 +119,18 @@ const PreviewKhornePlayableFaction = () => {
                             </Text>
                         </Box>
 
-                        <Stack direction={'row'} marginLeft={135} width={500}>
+                        <Stack direction={'row'} marginLeft={135}>
                             <Image src={movementIcon} width={25} height={25}/>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}>
                                 Campaign movement range: +35% after winning a battle
                             </Text>
                         </Stack>
 
-                        <div style={{margin: 20}}/>
+                        <div style={{margin: 10}}/>
 
-                        <Stack direction={'row'} marginLeft={134} width={500}>
+                        <Stack direction={'row'} marginLeft={134} alignItems={'center'}>
                             <Image src={recruitmentIcon} width={25} height={25}/>
-                            <div style={{position: "absolute", margin: "auto", top: "69%", left: "8.8%"}}>
+                            <div>
                                 <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                       marginBottom={-1}>
                                     Recruitment cost: -35%

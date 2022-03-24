@@ -12,26 +12,25 @@ import miscastIcon from "../../../../resources/icon/miscast-icon.png";
 
 const PreviewTzarinaKatarina = () => {
     return (
-        <div style={{width: '1888px'}}>
-            <div style={{margin: 20}}/>
+        <div style={{margin: 20}}>
             <Flex>
-                <Box width={'50%'}>
+                <Box width={'50%'} backgroundColor={'#6b798538'} height={650}>
                     <Flex marginLeft={125}>
                         <Box>
                             <Image src={theIceCourt} width={125} height={125}/>
                         </Box>
 
                         <Box marginTop={2}>
-                            <Text className={"text"} w={225} h={50} textAlign={"start"} fontSize={35}>Tzarina
+                            <Text className={"text"} w={500} h={50} textAlign={"start"} fontSize={35}>Tzarina
                                 Katarin
                             </Text>
-                            <Text className={"text"} w={225} h={50} textAlign={"start"} marginLeft={1} fontSize={25}>The
+                            <Text className={"text"} w={300} h={50} textAlign={"start"} marginLeft={1} fontSize={25}>The
                                 Ice Court
                             </Text>
                         </Box>
                     </Flex>
 
-                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125} width={820}>
+                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125}>
                         Tzarina Katarin Bokha, the Ice Queen of Kislev, known as one of the most powerful Ice Witches to
                         have ever lived. From the icy fastness of her capital city of Kislev, the Ice Queen rules her
                         land with an aloof majesty. Her power is said to come from the very Motherland itself, its
@@ -44,7 +43,7 @@ const PreviewTzarinaKatarina = () => {
                         </Text>
                     </Box>
 
-                    <Stack direction={'row'} marginLeft={135} width={500}>
+                    <Stack direction={'row'} marginLeft={135}>
                         <Image src={devotionIcon} width={25} height={25}/>
                         <Text className={"text"} textAlign={'start'} textColor={'#95df3f'}
                               fontSize={16}>
@@ -75,6 +74,7 @@ const PreviewTzarinaKatarina = () => {
                         </Text>
                     </Stack>
 
+                    <div style={{margin: 10}}/>
 
                     <Stack direction={'row'} marginLeft={134} width={270}>
                         <Image src={durationIcon} width={25} height={25}/>
@@ -89,9 +89,9 @@ const PreviewTzarinaKatarina = () => {
                         </Text>
                     </Box>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                         <Image src={corruptionIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "73%", left: "9.75%"}}>
+                        <div>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Corruption -6
@@ -104,9 +104,9 @@ const PreviewTzarinaKatarina = () => {
 
                     <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                         <Image src={upkeepIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "77%", left: "9.75%"}}>
+                        <div>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Upkeep: -50% for Ice Guard units

@@ -1,4 +1,18 @@
-import {Box, Flex, TabList, TabPanel, TabPanels, Tabs, Text, useStyles, useTab, Image, Link, Button} from "@chakra-ui/react";
+import {
+    Box,
+    Flex,
+    TabList,
+    TabPanel,
+    TabPanels,
+    Tabs,
+    Text,
+    useStyles,
+    useTab,
+    Image,
+    Link,
+    Button,
+    Spacer
+} from "@chakra-ui/react";
 import "../../../../css/preview-playable-faction.content.css"
 import CatarinaIcon from "../../../../resources/lord-icon/catarin-icon.png";
 import CatarinaChoosingIcon from './../../../../resources/lord-icon/catarin-chosing-icong.png';
@@ -40,17 +54,31 @@ const PreviewKislevPlayableFactions = () => {
     return (
         <>
             <Flex>
-                <Link href={`/`}>
-                    <Button width={150} colorScheme={"blackAlpha"}>
-                        <Text className={"button-text"}>
-                            Back to main page
-                        </Text>
-                    </Button>
-                </Link>
+                <Box marginLeft={5}>
+                    <Link href={`/`}>
+                        <Button width={175} colorScheme={"blackAlpha"}>
+                            <Text className={"button-text"}>
+                                Back to main page
+                            </Text>
+                        </Button>
+                    </Link>
+                </Box>
 
-                <Text className={"text"} marginLeft={598}>
+                <Spacer/>
+
+                <Text className={"text"}>
                     Kislev: Playable Factions
                 </Text>
+
+                <Spacer/>
+
+                <Box marginRight={5}>
+                    <Button width={175} colorScheme={"blackAlpha"}>
+                        <Text className={"button-text"}>
+                            Character Comparison
+                        </Text>
+                    </Button>
+                </Box>
             </Flex>
 
             <Flex>

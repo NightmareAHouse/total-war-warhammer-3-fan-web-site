@@ -1,4 +1,18 @@
-import {Box, Button, Flex, Image, Link, TabList, TabPanel, TabPanels, Tabs, Text, useStyles, useTab} from "@chakra-ui/react";
+import {
+    Box,
+    Button,
+    Flex,
+    Image,
+    Link,
+    Spacer,
+    TabList,
+    TabPanel,
+    TabPanels,
+    Tabs,
+    Text,
+    useStyles,
+    useTab
+} from "@chakra-ui/react";
 import GreasusGoldtoothIcon from "../../../../resources/lord-icon/greasus-goldtooth-icon.png";
 import GreasusGoldtoothChoosingIcon from "../../../../resources/lord-icon/greasus-goldtooth-choosing-icon.png";
 import ScragTheSlaughterIcon from "../../../../resources/lord-icon/scrag-the-slaughter-icon.png";
@@ -35,17 +49,31 @@ const PreviewOgrePlayableFactions = () => {
     return (
         <>
             <Flex>
-                <Link href={`/`}>
-                    <Button width={150} colorScheme={"blackAlpha"}>
-                        <Text className={"button-text"}>
-                            Back to main page
-                        </Text>
-                    </Button>
-                </Link>
+                <Box marginLeft={5}>
+                    <Link href={`/`}>
+                        <Button width={175} colorScheme={"blackAlpha"}>
+                            <Text className={"button-text"}>
+                                Back to main page
+                            </Text>
+                        </Button>
+                    </Link>
+                </Box>
 
-                <Text className={"text"} marginLeft={598}>
+                <Spacer/>
+
+                <Text className={"text"}>
                     Ogre: Playable Factions
                 </Text>
+
+                <Spacer/>
+
+                <Box marginRight={5}>
+                    <Button width={175} colorScheme={"blackAlpha"}>
+                        <Text className={"button-text"}>
+                            Character Comparison
+                        </Text>
+                    </Button>
+                </Box>
             </Flex>
 
             <Flex>

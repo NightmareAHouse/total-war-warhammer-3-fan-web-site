@@ -7,11 +7,10 @@ import upkeepIcon from "../../../../resources/icon/upkeep-icon.png";
 import armyIcon from "../../../../resources/icon/army-icon.png";
 
 const PreviewGreasusGoldtooth = () => {
-    return(
-        <div style={{width: '1880px'}}>
-            <div style={{margin: 20}}/>
+    return (
+        <div style={{margin: 20}}>
             <Flex>
-                <Box width={'50%'} backgroundColor={'#6b798538'} height={600}>
+                <Box width={'50%'} backgroundColor={'#6b798538'} height={650}>
                     <Flex marginLeft={125}>
                         <Box>
                             <Image src={goldtooth} width={125} height={125}/>
@@ -27,9 +26,10 @@ const PreviewGreasusGoldtooth = () => {
                         </Box>
                     </Flex>
 
-                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125} width={820}>
+                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125}>
                         Overtyrant Greasus Goldtooth is the fattest and most powerful Ogre Tyrant of all the Ogre
-                        Kingdoms. A master of bribery, the Overtyrant has always used his considerable wealth as a way to
+                        Kingdoms. A master of bribery, the Overtyrant has always used his considerable wealth as a way
+                        to
                         inspire greed and confusion amongst his enemies. Yet Greasus rampant success has not diminished
                         his greed or his all-consuming desire to conquer everything he sees
                     </Text>
@@ -40,7 +40,7 @@ const PreviewGreasusGoldtooth = () => {
                         </Text>
                     </Box>
 
-                    <Stack direction={'row'} marginLeft={135} width={500}>
+                    <Stack direction={'row'} marginLeft={135}>
                         <Image src={diplomaticIcon} width={25} height={25}/>
                         <Text className={"text"} textAlign={'start'} textColor={'#95df3f'}
                               fontSize={16}>
@@ -72,9 +72,9 @@ const PreviewGreasusGoldtooth = () => {
                         </Text>
                     </Box>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                         <Image src={incomeIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "71%", left: "9.75%"}}>
+                        <div>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Income from raiding: +50%
@@ -92,11 +92,11 @@ const PreviewGreasusGoldtooth = () => {
                         </div>
                     </Stack>
 
-                    <div style={{margin: 20}}/>
+                    <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                         <Image src={upkeepIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "76%", left: "9.75%"}}>
+                        <div>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Upkeep: -50% for Ironguts units
@@ -114,16 +114,16 @@ const PreviewGreasusGoldtooth = () => {
                         </div>
                     </Stack>
 
-                    <div style={{margin: 20}}/>
+                    <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134} alignItems={'center'}>
                         <Image src={incomeIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "80.5%", left: "9.75%"}}>
+                        <div>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Income from sacking and looting settlements: +50%
                             </Text>
-                            <Stack direction={'row'} width={500}>
+                            <Stack direction={'row'}>
                                 <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}>
                                     (
                                 </Text>

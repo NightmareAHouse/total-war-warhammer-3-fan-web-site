@@ -12,29 +12,30 @@ import frenzyIcon from "../../../../resources/icon/freenzy-icon.png";
 import armyIcon from "../../../../resources/icon/army-icon.png";
 
 const PreviewKostalyn = () => {
-    return(
-        <div style={{width: '1880px'}}>
-            <div style={{margin: 20}}/>
+    return (
+        <div style={{margin: 20}}>
             <Flex>
-                <Box width={'50%'}>
+                <Box width={'50%'} backgroundColor={'#6b798538'} height={650}>
                     <Flex marginLeft={125}>
                         <Box>
                             <Image src={theGreatOrthodoxy} width={125} height={125}/>
                         </Box>
 
                         <Box marginTop={2}>
-                            <Text className={"text"} w={225} h={50} textAlign={"start"} fontSize={35}>
+                            <Text className={"text"} w={500} h={50} textAlign={"start"} fontSize={35}>
                                 Kostaltyn
                             </Text>
-                            <Text className={"text"} w={250} h={50} textAlign={"start"} marginLeft={1} fontSize={25}>
+                            <Text className={"text"} w={300} h={50} textAlign={"start"} marginLeft={1} fontSize={25}>
                                 The Great Orthodoxy
                             </Text>
                         </Box>
                     </Flex>
 
-                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125} width={820}>
-                        As supreme patriarch of the Ursunite faith, Kostaltyn is one of the most powerful spiritual leaders in
-                        Kislev. Wild and unkempt in appearance, he is a howling, angry firebrand on the battlefield, urging
+                    <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125}>
+                        As supreme patriarch of the Ursunite faith, Kostaltyn is one of the most powerful spiritual
+                        leaders in
+                        Kislev. Wild and unkempt in appearance, he is a howling, angry firebrand on the battlefield,
+                        urging
                         his devoted followers onwards to fight and die in the name of the Great Bear.
                     </Text>
 
@@ -44,7 +45,7 @@ const PreviewKostalyn = () => {
                         </Text>
                     </Box>
 
-                    <Stack direction={'row'} marginLeft={135} width={500}>
+                    <Stack direction={'row'} marginLeft={135}>
                         <Image src={diplomaticIcon} width={25} height={25}/>
                         <Text className={"text"} textAlign={'start'} textColor={'#d14141'}
                               fontSize={16}>
@@ -59,7 +60,7 @@ const PreviewKostalyn = () => {
 
                     <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134}>
                         <Image src={devotionIcon} width={25} height={25}/>
                         <Text className={"text"} textAlign={'start'} textColor={'#95df3f'}
                               fontSize={16}>
@@ -83,7 +84,7 @@ const PreviewKostalyn = () => {
 
                     <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={134} width={570}>
+                    <Stack direction={'row'} marginLeft={134}>
                         <Image src={meleeIcon} width={25} height={25}/>
                         <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}>
                             Melee attack: +5 for Kossars, Kossovite Dervishes and Horse Archer unit
@@ -92,7 +93,7 @@ const PreviewKostalyn = () => {
 
                     <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={134} width={570}>
+                    <Stack direction={'row'} marginLeft={134}>
                         <Image src={leadershipIcon} width={25} height={25}/>
                         <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}>
                             Leadership: +5 for Kossars, Kossovite Dervishes and Horse Archer unit
@@ -107,17 +108,17 @@ const PreviewKostalyn = () => {
 
                     <Stack direction={'row'} marginLeft={134} width={500}>
                         <Image src={woundIcon} width={25} height={25}/>
-                            <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
-                                  marginBottom={-1}>
-                                Wound recovery time -2
-                            </Text>
+                        <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
+                              marginBottom={-1}>
+                            Wound recovery time -2
+                        </Text>
                     </Stack>
 
                     <div style={{margin: 10}}/>
 
-                    <Stack direction={'row'} marginLeft={134} width={500}>
+                    <Stack direction={'row'} marginLeft={134} width={500} alignItems={'center'}>
                         <Image src={frenzyIcon} width={25} height={25}/>
-                        <div style={{position: "absolute", margin: "auto", top: "78.2%", left: "9.75%"}}>
+                        <div>
                             <Text className={"text"} textAlign={'start'} textColor={'#95df3f'} fontSize={16}
                                   marginBottom={-1}>
                                 Passive ability: "Frenzy"
