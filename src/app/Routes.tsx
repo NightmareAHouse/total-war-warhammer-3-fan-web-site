@@ -10,11 +10,11 @@ import PreviewChaosUndividedPlayableFaction
 import PreviewKhornePlayableFaction
     from "../component/preview-fractions/preview-playable-factions/khorne/preview-khorne-playable-faction";
 import PreviewTzeentchPlayableFaction
-    from "../component/preview-fractions/preview-playable-factions/preview-tzeentch-playable-faction";
+    from "../component/preview-fractions/preview-playable-factions/tzeentch/preview-tzeentch-playable-faction";
 import PreviewNurglePlayableFaction
-    from "../component/preview-fractions/preview-playable-factions/preview-nurgle-playable-faction";
+    from "../component/preview-fractions/preview-playable-factions/nurgle/preview-nurgle-playable-faction";
 import PreviewSlaaneshPlayableFaction
-    from "../component/preview-fractions/preview-playable-factions/preview-slaanesh-playable-faction";
+    from "../component/preview-fractions/preview-playable-factions/slaanesh/preview-slaanesh-playable-faction";
 
 export const routes = {
     kislev: "/preview/kislev",
