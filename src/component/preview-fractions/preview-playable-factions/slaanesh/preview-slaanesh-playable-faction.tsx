@@ -32,11 +32,13 @@ const PreviewSlaaneshPlayableFaction = () => {
                 <Spacer/>
 
                 <Box>
-                    <Button width={175} colorScheme={"blackAlpha"}>
-                        <Text>
-                            Character Comparison
-                        </Text>
-                    </Button>
+                    <Link href={`/comparison`}>
+                        <Button width={175} colorScheme={"blackAlpha"}>
+                            <Text>
+                                Character Comparison
+                            </Text>
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
 
@@ -61,7 +63,7 @@ const PreviewSlaaneshPlayableFaction = () => {
                             </Box>
                         </Flex>
 
-                        <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125} >
+                        <Text className={"text"} textAlign={'start'} fontSize={20} marginLeft={125}>
                             The Daemon known as N'Kari is a'notorious Keeper of Secrets. As the Arch-tempter, he scours
                             the
                             immortal and mortal realms to experience the ultimate sensation and taste ecstasy in its

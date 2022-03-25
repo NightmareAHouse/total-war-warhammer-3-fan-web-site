@@ -32,11 +32,13 @@ const PreviewNurglePlayableFaction = () => {
                 <Spacer/>
 
                 <Box marginRight={5}>
-                    <Button width={175} colorScheme={"blackAlpha"}>
-                        <Text className={"button-text"}>
-                            Character Comparison
-                        </Text>
-                    </Button>
+                    <Link href={`/comparison`}>
+                        <Button width={175} colorScheme={"blackAlpha"}>
+                            <Text className={"button-text"}>
+                                Character Comparison
+                            </Text>
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
 

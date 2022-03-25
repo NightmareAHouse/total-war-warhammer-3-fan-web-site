@@ -30,11 +30,13 @@ const PreviewTzeentchPlayableFaction = () => {
                 <Spacer/>
 
                 <Box marginRight={5}>
-                    <Button width={175} colorScheme={"blackAlpha"}>
-                        <Text>
-                            Character Comparison
-                        </Text>
-                    </Button>
+                    <Link href={`/comparison`}>
+                        <Button width={175} colorScheme={"blackAlpha"}>
+                            <Text>
+                                Character Comparison
+                            </Text>
+                        </Button>
+                    </Link>
                 </Box>
             </Flex>
 

@@ -55,7 +55,7 @@ const PreviewKislevPlayableFactions = () => {
         <>
             <Flex>
                 <Box marginLeft={5}>
-                    <Link href={`/`}>
+                    <Link href={`/comparison`}>
                         <Button width={175} colorScheme={"blackAlpha"}>
                             <Text className={"button-text"}>
                                 Back to main page

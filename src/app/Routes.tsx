@@ -15,6 +15,7 @@ import PreviewNurglePlayableFaction
     from "../component/preview-fractions/preview-playable-factions/nurgle/preview-nurgle-playable-faction";
 import PreviewSlaaneshPlayableFaction
     from "../component/preview-fractions/preview-playable-factions/slaanesh/preview-slaanesh-playable-faction";
+import CharacterCompasion from "../component/character-compasion/character-compasion";
 
 export const routes = {
     kislev: "/preview/kislev",
@@ -24,7 +25,8 @@ export const routes = {
     khrone: '/preview/khorne',
     tzeentch: '/preview/tzeentch',
     nurgle: '/preview/nurgle',
-    slaanesh: '/preview/slaanesh'
+    slaanesh: '/preview/slaanesh',
+    comparison: '/comparison'
 }
 
 export default function Routes() {
@@ -56,6 +58,9 @@ export default function Routes() {
             </Route>
             <Route path={routes.slaanesh}>
                 <PreviewSlaaneshPlayableFaction />
+            </Route>
+            <Route path={routes.comparison}>
+                <CharacterCompasion />
             </Route>
         </Switch>
     )
