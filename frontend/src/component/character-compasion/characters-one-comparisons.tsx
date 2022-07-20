@@ -18,6 +18,7 @@ import kugathCharacter from "../../resources/character/nurgle-character.png";
 import kugathStats from "../../resources/hero-stats/kugath-stats.png";
 import nkariCharacter from "../../resources/character/slaanesh-character.png";
 import nkariStats from "../../resources/hero-stats/nkari-stats.png";
+import blankCharacter from "../../resources/character/blank-character.png"
 import {CharactersOneComparisonsResult, settingsApi} from "../../api/settings-api";
 import "../../css/character-comparisons.content.css"
 import {useState} from "react";
@@ -30,7 +31,7 @@ type CharacterComparison = {
 }
 
 const tmpCharacter: CharacterComparison = {
-    heroImage: "",
+    heroImage: blankCharacter,
     heroName: "",
     width: 350,
     heroStats: ""
@@ -62,29 +63,42 @@ const CharactersOneComparisons = () => {
         stats: string,
         text: string
     }) => (
-        <Box backgroundColor={'#bac4cf1f'} width={125} height={125} marginRight={5} onClick={() => {
-            if (firstCharacterComparison.heroImage === "") {
-                setFirstCharacterComparison({
-                    heroImage: props.heroIcon,
-                    width: props.width,
-                    heroName: props.heroName,
-                    heroStats: props.stats
-                })
-            } else {
-                setSecondCharacterComparison({
-                    heroImage: props.heroIcon,
-                    width: props.width,
-                    heroName: props.heroName,
-                    heroStats: props.stats
-                })
-                setIsDisabled(false)
-            }
-            setComparisonIsTrue(false)
-        }} cursor={"pointer"}>
-            <Image src={props.icon} margin={'auto'} width={75} height={75}/>
-            <Text className={'text'} fontSize={15}>
-                {props.text}
-            </Text>
+        <Box backgroundColor={'#bac4cf1f'} width={130} height={125}
+             marginRight={5} borderRadius={5}
+             _hover={{ bg: '#ffffff38' }}
+             _active={{
+            bg: '#ffffff38',
+            transform: 'scale(0.98)',
+        }}
+             _focus={{
+                 boxShadow:
+                     '0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)',
+             }}
+             onClick={() => {
+                 if (firstCharacterComparison.heroImage === blankCharacter) {
+                     setFirstCharacterComparison({
+                         heroImage: props.heroIcon,
+                         width: props.width,
+                         heroName: props.heroName,
+                         heroStats: props.stats
+                     })
+                 } else {
+                     setSecondCharacterComparison({
+                         heroImage: props.heroIcon,
+                         width: props.width,
+                         heroName: props.heroName,
+                         heroStats: props.stats
+                     })
+                     setIsDisabled(false)
+                 }
+                 setComparisonIsTrue(false)
+             }} cursor={"pointer"}>
+            <Box marginTop={1}>
+                <Image src={props.icon} margin={'auto'} width={75} height={75}/>
+                <Text className={'text'} fontSize={15}>
+                    {props.text}
+                </Text>
+            </Box>
         </Box>
     )
 
@@ -162,9 +176,11 @@ const CharactersOneComparisons = () => {
                 <ChooseLord icon={theGreatOrthodoxyIcon} heroIcon={kostaltynCharacter} stats={kostaltynStats}
                             width={350} heroName={'Kostaltyn'} text={"Kostaltyn"}/>
                 <ChooseLord icon={theNorthProvincesIcon} heroIcon={""} stats={""} width={350}
-                            heroName={'MiaoYing'} text={"Miao Ying, the Storm Dragon"}/>
+                            heroName={'MiaoYing'} text={"Miao Ying, " +
+                    "the Storm Dragon"}/>
                 <ChooseLord icon={theWesternProvincesIcon} heroIcon={""} stats={""} width={350}
-                            heroName={'ZhaoMing'} text={"Zhao Ming, the Iron Dragon"}/>
+                            heroName={'ZhaoMing'} text={"Zhao Ming, " +
+                    "the Iron Dragon"}/>
                 <ChooseLord icon={goldtoothIcon} heroIcon={""} stats={""} width={350}
                             heroName={'Greasus'} text={"Greasus Goldtooth"}/>
                 <ChooseLord icon={disciplesOfTheMawIcon} heroIcon={""} stats={""} width={350}
@@ -261,7 +277,7 @@ const CharactersOneComparisons = () => {
 
                 <Spacer/>
             </Flex>
-            <Box marginTop={75}>
+            <Box marginTop={50}>
                 {!comparisonIsTrue ?
                     <Button backgroundColor={'red'} onClick={comparisons} disabled={isDisabled}>
                         Comparison
