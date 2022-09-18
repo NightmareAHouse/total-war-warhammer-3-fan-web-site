@@ -1,4 +1,5 @@
 {
+  "homepage": " https://nightmareahouse.github.io/total-war-warhammer-3-web-browser",
   "name": "total-war-warhammer-web-page",
   "version": "0.4.0",
   "private": true,
@@ -26,6 +27,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -48,6 +51,7 @@
   },
   "devDependencies": {
     "@types/react-dom": "^17.0.2",
-    "@types/react-router-dom": "^5.1.7"
+    "@types/react-router-dom": "^5.1.7",
+    "gh-pages": "^4.0.0"
   }
 }

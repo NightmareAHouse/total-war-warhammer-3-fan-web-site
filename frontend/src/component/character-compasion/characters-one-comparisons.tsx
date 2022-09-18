@@ -1,4 +1,4 @@
-import {Box, Flex, Text, Image, Spacer, Stack, Button, HStack} from "@chakra-ui/react"
+import {Box, Flex, Text, Image, Spacer, Stack, Button, HStack, background} from "@chakra-ui/react"
 import theIceCourtIcon from "../../resources/fraction-icon/the-ice-court.png"
 import theGreatOrthodoxyIcon from "../../resources/fraction-icon/the-great-orthodoxy.png"
 import theNorthProvincesIcon from "../../resources/fraction-icon/the-northem-provinces.png"
@@ -65,11 +65,11 @@ const CharactersOneComparisons = () => {
     }) => (
         <Box backgroundColor={'#bac4cf1f'} width={130} height={125}
              marginRight={5} borderRadius={5}
-             _hover={{ bg: '#ffffff38' }}
+             _hover={{bg: '#ffffff38', transform: 'scale(1.1)'}}
              _active={{
-            bg: '#ffffff38',
-            transform: 'scale(0.98)',
-        }}
+                 bg: '#ffffff38',
+                 transform: 'scale(0.98)',
+             }}
              _focus={{
                  boxShadow:
                      '0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)',
@@ -83,12 +83,28 @@ const CharactersOneComparisons = () => {
                          heroStats: props.stats
                      })
                  } else {
-                     setSecondCharacterComparison({
-                         heroImage: props.heroIcon,
-                         width: props.width,
-                         heroName: props.heroName,
-                         heroStats: props.stats
-                     })
+                     if (props.heroIcon === firstCharacterComparison.heroImage) {
+                         setFirstCharacterComparison({
+                             heroImage: blankCharacter,
+                             heroName: "",
+                             width: 350,
+                             heroStats: ""
+                         })
+                     } else if(props.heroIcon === secondCharacterComparison.heroImage) {
+                         setSecondCharacterComparison({
+                             heroImage: blankCharacter,
+                             heroName: "",
+                             width: 350,
+                             heroStats: ""
+                         })
+                     } else {
+                         setSecondCharacterComparison({
+                             heroImage: props.heroIcon,
+                             width: props.width,
+                             heroName: props.heroName,
+                             heroStats: props.stats
+                         })
+                     }
                      setIsDisabled(false)
                  }
                  setComparisonIsTrue(false)
