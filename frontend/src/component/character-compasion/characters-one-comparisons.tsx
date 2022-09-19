@@ -1,4 +1,4 @@
-import {Box, Flex, Text, Image, Spacer, Stack, Button, HStack, background} from "@chakra-ui/react"
+import {Box, Flex, Text, Image, Spacer, Stack, Button, HStack} from "@chakra-ui/react"
 import theIceCourtIcon from "../../resources/fraction-icon/the-ice-court.png"
 import theGreatOrthodoxyIcon from "../../resources/fraction-icon/the-great-orthodoxy.png"
 import theNorthProvincesIcon from "../../resources/fraction-icon/the-northem-provinces.png"
