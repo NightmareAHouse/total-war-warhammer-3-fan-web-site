@@ -15,8 +15,8 @@ import {
 } from "@chakra-ui/react";
 import "../../../../css/preview-playable-faction.content.css"
 import CatarinaIcon from "../../../../resources/lord-icon/catarin-icon.png";
-import CatarinaChoosingIcon from './../../../../resources/lord-icon/catarin-chosing-icong.png';
-import KostaltynIcon from './../../../../resources/lord-icon/kostaltyn-icon.png';
+import CatarinaChoosingIcon from '../../../../resources/lord-icon/catarin-chosing-icong.png';
+import KostaltynIcon from '../../../../resources/lord-icon/kostaltyn-icon.png';
 import KostaltynChoosingIcon from "../../../../resources/lord-icon/kostaltyn-chosing-icon.png";
 import PreviewTzarinaKatarina from "./preview-tzarina-katarina";
 import PreviewKostalyn from "./preview-kostalyn";
